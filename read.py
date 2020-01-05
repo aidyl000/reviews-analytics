@@ -9,6 +9,14 @@ with open('reviews.txt', 'r') as f:
 print('檔案讀取完了', '總共有', len(data), '筆資料')
 
 sum_len = 0 # 加總
-for d in data: # 每一筆留言的長度
-    sum_len = sum_len + len(d)
+for d in data: # for loop 把清單中的東西一個一個拿出來
+    sum_len = sum_len + len(d) # 每一筆留言的長度
 print('留言的平均長度為', sum_len/len(data))
+
+new = []
+for d in data:
+    if len(d) < 100: # 以字母計算
+        new.append(d)
+print('一共有', len(new), '筆留言長度小於100') 
+print(new[0])
+print(new[1])
